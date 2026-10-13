@@ -1,0 +1,1132 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description"
+          content="El Palacio del Poder: videojuego educativo de Filosofía sobre Foucault, Preciado y Byung-Chul Han.">
+
+    <meta name="theme-color" content="#101725">
+
+    <title>El Palacio del Poder | Videojuego de Filosofía</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <script src="script.js" defer></script>
+</head>
+
+<body>
+
+    <!-- ACCESIBILIDAD -->
+
+    <a href="#contenido-principal" class="skip-link">
+        Saltar al contenido principal
+    </a>
+
+    <!-- CONTENEDOR GENERAL -->
+
+    <div id="app" class="app">
+
+        <!-- ENCABEZADO -->
+
+        <header class="site-header">
+
+            <div class="brand">
+                <span class="brand-symbol" aria-hidden="true">◈</span>
+
+                <div class="brand-text">
+                    <strong>EL PALACIO DEL PODER</strong>
+                    <span>Una aventura filosófica</span>
+                </div>
+            </div>
+
+            <div class="header-actions">
+
+                <button
+                    id="btn-audio"
+                    class="icon-button"
+                    type="button"
+                    aria-label="Activar o desactivar sonido"
+                    aria-pressed="false">
+                    <span aria-hidden="true">♫</span>
+                    <span id="audio-label">Audio desactivado</span>
+                </button>
+
+                <button
+                    id="btn-ayuda-global"
+                    class="icon-button"
+                    type="button">
+                    Ayuda
+                </button>
+
+            </div>
+
+        </header>
+
+        <main id="contenido-principal">
+
+            <!-- ================================= -->
+            <!-- PANTALLA 1: INICIO                -->
+            <!-- ================================= -->
+
+            <section
+                id="pantalla-inicio"
+                class="screen screen-start"
+                aria-labelledby="titulo-juego">
+
+                <div class="start-background" aria-hidden="true">
+
+                    <div class="palace-silhouette">
+                        <div class="palace-roof"></div>
+                        <div class="palace-columns"></div>
+                        <div class="palace-entrance"></div>
+                    </div>
+
+                </div>
+
+                <div class="start-content">
+
+                    <p class="eyebrow">
+                        UNA AVENTURA DE EXPLORACIÓN Y DECISIONES
+                    </p>
+
+                    <h1 id="titulo-juego">
+                        EL PALACIO
+                        <span>DEL PODER</span>
+                    </h1>
+
+                    <p class="start-description">
+                        Un palacio misterioso.
+                        Tres formas de comprender el poder.
+                        Un recorrido donde cada decisión
+                        puede cambiar tu camino.
+                    </p>
+
+                    <div class="start-question">
+                        <p>
+                            ¿El poder solamente nos controla
+                            desde afuera o también influye
+                            en lo que somos y nos exigimos?
+                        </p>
+                    </div>
+
+                    <div class="start-buttons">
+
+                        <button
+                            id="btn-jugar"
+                            class="btn btn-primary"
+                            type="button">
+                            Comenzar aventura
+                        </button>
+
+                        <button
+                            id="btn-instrucciones"
+                            class="btn btn-secondary"
+                            type="button">
+                            Cómo jugar
+                        </button>
+
+                    </div>
+
+                    <p class="start-footer">
+                        Filosofía · Política y poder ·
+                        3.º de Educación Media Superior
+                    </p>
+
+                </div>
+
+            </section>
+
+            <!-- ================================= -->
+            <!-- PANTALLA 2: INTRODUCCIÓN          -->
+            <!-- ================================= -->
+
+            <section
+                id="pantalla-introduccion"
+                class="screen screen-introduction hidden"
+                aria-labelledby="titulo-introduccion">
+
+                <div class="story-container">
+
+                    <p class="eyebrow">PRÓLOGO</p>
+
+                    <h2 id="titulo-introduccion">
+                        Las puertas del palacio
+                    </h2>
+
+                    <div class="story-text">
+
+                        <p>
+                            Llegaste a un antiguo palacio
+                            donde las reglas no siempre
+                            son lo que parecen.
+                        </p>
+
+                        <p>
+                            En algunas salas, alguien vigila
+                            tus movimientos. En otras,
+                            las normas determinan cómo
+                            se clasifica a las personas.
+                        </p>
+
+                        <p>
+                            Pero existe un lugar todavía
+                            más extraño: una sala donde
+                            nadie te obliga a hacer nada
+                            y, sin embargo, sentís
+                            que nunca hacés lo suficiente.
+                        </p>
+
+                        <p>
+                            Para descubrir qué sucede,
+                            deberás recorrer el palacio,
+                            observar, superar obstáculos,
+                            conversar con personajes
+                            y tomar decisiones.
+                        </p>
+
+                    </div>
+
+                    <div class="mission-card">
+
+                        <h3>Tu misión</h3>
+
+                        <p>
+                            Descubrir cómo funciona el poder
+                            en diferentes situaciones y
+                            relacionar lo que experimentás
+                            con las ideas de tres filósofos.
+                        </p>
+
+                    </div>
+
+                    <button
+                        id="btn-continuar-introduccion"
+                        class="btn btn-primary"
+                        type="button">
+                        Entrar al palacio
+                    </button>
+
+                </div>
+
+            </section>
+
+            <!-- ================================= -->
+            <!-- PANTALLA 3: MAPA DEL PALACIO      -->
+            <!-- ================================= -->
+
+            <section
+                id="pantalla-mapa"
+                class="screen screen-map hidden"
+                aria-labelledby="titulo-mapa">
+
+                <div class="section-heading">
+
+                    <p class="eyebrow">MAPA DE LA AVENTURA</p>
+
+                    <h2 id="titulo-mapa">
+                        Las salas del poder
+                    </h2>
+
+                    <p>
+                        Cada sala representa una manera
+                        diferente de comprender
+                        cómo funciona el poder.
+                    </p>
+
+                </div>
+
+                <div id="mapa-salas" class="level-grid">
+
+                    <!-- SALA 1 -->
+
+                    <article
+                        class="level-card available"
+                        data-level="1">
+
+                        <div class="level-art level-art-foucault"
+                             aria-hidden="true"></div>
+
+                        <div class="level-information">
+
+                            <span class="level-number">
+                                SALA I
+                            </span>
+
+                            <h3>La mirada que vigila</h3>
+
+                            <p class="level-author">
+                                Michel Foucault
+                            </p>
+
+                            <p>
+                                Explorá un espacio donde
+                                la vigilancia, las normas
+                                y la disciplina organizan
+                                los comportamientos.
+                            </p>
+
+                            <span
+                                id="estado-sala-1"
+                                class="level-status">
+                                Disponible
+                            </span>
+
+                            <button
+                                id="btn-sala-1"
+                                class="btn btn-primary"
+                                type="button"
+                                data-start-level="1">
+                                Entrar a la sala
+                            </button>
+
+                        </div>
+
+                    </article>
+
+                    <!-- SALA 2 -->
+
+                    <article
+                        class="level-card locked"
+                        data-level="2">
+
+                        <div class="level-art level-art-preciado"
+                             aria-hidden="true"></div>
+
+                        <div class="level-information">
+
+                            <span class="level-number">
+                                SALA II
+                            </span>
+
+                            <h3>El laberinto de las normas</h3>
+
+                            <p class="level-author">
+                                Paul B. Preciado
+                            </p>
+
+                            <p>
+                                Descubrí cómo las categorías
+                                y las normas influyen
+                                en la identidad y
+                                en los caminos posibles.
+                            </p>
+
+                            <span
+                                id="estado-sala-2"
+                                class="level-status">
+                                Bloqueada
+                            </span>
+
+                            <button
+                                id="btn-sala-2"
+                                class="btn btn-secondary"
+                                type="button"
+                                data-start-level="2"
+                                disabled>
+                                Sala bloqueada
+                            </button>
+
+                        </div>
+
+                    </article>
+
+                    <!-- SALA 3 -->
+
+                    <article
+                        class="level-card locked"
+                        data-level="3">
+
+                        <div class="level-art level-art-han"
+                             aria-hidden="true"></div>
+
+                        <div class="level-information">
+
+                            <span class="level-number">
+                                SALA III
+                            </span>
+
+                            <h3>El desafío del rendimiento</h3>
+
+                            <p class="level-author">
+                                Byung-Chul Han
+                            </p>
+
+                            <p>
+                                Ingresá a un espacio
+                                donde las metas parecen
+                                infinitas y avanzar
+                                más rápido no siempre
+                                significa avanzar mejor.
+                            </p>
+
+                            <span
+                                id="estado-sala-3"
+                                class="level-status">
+                                Bloqueada
+                            </span>
+
+                            <button
+                                id="btn-sala-3"
+                                class="btn btn-secondary"
+                                type="button"
+                                data-start-level="3"
+                                disabled>
+                                Sala bloqueada
+                            </button>
+
+                        </div>
+
+                    </article>
+
+                    <!-- DESAFÍO FINAL -->
+
+                    <article
+                        class="level-card final-level locked"
+                        data-level="4">
+
+                        <div class="level-art level-art-final"
+                             aria-hidden="true"></div>
+
+                        <div class="level-information">
+
+                            <span class="level-number">
+                                DESAFÍO FINAL
+                            </span>
+
+                            <h3>El corazón del palacio</h3>
+
+                            <p class="level-author">
+                                La gran pregunta
+                            </p>
+
+                            <p>
+                                Combiná los conocimientos
+                                descubiertos y resolvé
+                                situaciones donde distintas
+                                formas de poder se relacionan.
+                            </p>
+
+                            <span
+                                id="estado-sala-4"
+                                class="level-status">
+                                Bloqueado
+                            </span>
+
+                            <button
+                                id="btn-sala-4"
+                                class="btn btn-secondary"
+                                type="button"
+                                data-start-level="4"
+                                disabled>
+                                Desafío bloqueado
+                            </button>
+
+                        </div>
+
+                    </article>
+
+                </div>
+
+            </section>
+
+            <!-- ================================= -->
+            <!-- PANTALLA 4: VIDEOJUEGO            -->
+            <!-- ================================= -->
+
+            <section
+                id="pantalla-juego"
+                class="screen screen-game hidden"
+                aria-labelledby="titulo-sala-actual">
+
+                <!-- HUD: INFORMACIÓN DEL JUGADOR -->
+
+                <div class="game-hud">
+
+                    <div class="hud-level">
+
+                        <span id="numero-sala-actual">
+                            SALA I
+                        </span>
+
+                        <h2 id="titulo-sala-actual">
+                            La mirada que vigila
+                        </h2>
+
+                    </div>
+
+                    <div class="hud-progress">
+
+                        <label for="barra-progreso">
+                            Progreso de la sala
+                        </label>
+
+                        <progress
+                            id="barra-progreso"
+                            value="0"
+                            max="100">
+                            0%
+                        </progress>
+
+                        <span id="porcentaje-progreso">
+                            0%
+                        </span>
+
+                    </div>
+
+                    <div class="hud-stats">
+
+                        <div class="stat">
+                            <span>Puntos</span>
+                            <strong id="puntuacion">0</strong>
+                        </div>
+
+                        <div class="stat">
+                            <span>Descubrimientos</span>
+                            <strong id="descubrimientos">0</strong>
+                        </div>
+
+                    </div>
+
+                    <div class="hud-actions">
+
+                        <button
+                            id="btn-pausa"
+                            class="btn btn-small"
+                            type="button">
+                            Pausa
+                        </button>
+
+                        <button
+                            id="btn-mapa"
+                            class="btn btn-small"
+                            type="button">
+                            Mapa
+                        </button>
+
+                    </div>
+
+                </div>
+
+                <!-- ESCENARIO PRINCIPAL -->
+
+                <div class="game-layout">
+
+                    <div class="game-stage">
+
+                        <canvas
+                            id="game-canvas"
+                            width="1280"
+                            height="720"
+                            tabindex="0"
+                            aria-label="Escenario del videojuego. Utilizá las flechas para moverte, espacio para saltar y E para interactuar.">
+                            Tu navegador no admite Canvas.
+                        </canvas>
+
+                        <!-- AVISO DE INTERACCIÓN -->
+
+                        <div
+                            id="interaction-prompt"
+                            class="interaction-prompt hidden"
+                            aria-live="polite">
+
+                            <span class="keyboard-key">E</span>
+
+                            <span id="interaction-text">
+                                Interactuar
+                            </span>
+
+                        </div>
+
+                        <!-- MENSAJES BREVES -->
+
+                        <div
+                            id="game-toast"
+                            class="game-toast hidden"
+                            role="status"
+                            aria-live="polite">
+                        </div>
+
+                        <!-- CONTROLES TÁCTILES -->
+
+                        <div
+                            id="touch-controls"
+                            class="touch-controls"
+                            aria-label="Controles táctiles">
+
+                            <button
+                                id="touch-left"
+                                class="touch-button"
+                                type="button"
+                                aria-label="Mover a la izquierda">
+                                ◀
+                            </button>
+
+                            <button
+                                id="touch-right"
+                                class="touch-button"
+                                type="button"
+                                aria-label="Mover a la derecha">
+                                ▶
+                            </button>
+
+                            <button
+                                id="touch-jump"
+                                class="touch-button"
+                                type="button">
+                                Saltar
+                            </button>
+
+                            <button
+                                id="touch-interact"
+                                class="touch-button"
+                                type="button">
+                                Interactuar
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                    <!-- PANEL DE MISIÓN -->
+
+                    <aside
+                        id="panel-mision"
+                        class="mission-panel"
+                        aria-labelledby="titulo-mision">
+
+                        <span class="eyebrow">
+                            MISIÓN ACTUAL
+                        </span>
+
+                        <h3 id="titulo-mision">
+                            Explorá el palacio
+                        </h3>
+
+                        <p id="descripcion-mision">
+                            Observá el escenario,
+                            acercate a los objetos
+                            y descubrí cómo funcionan
+                            las reglas de esta sala.
+                        </p>
+
+                        <div class="mission-divider"></div>
+
+                        <h4>Objetivos</h4>
+
+                        <ul
+                            id="lista-objetivos"
+                            class="objective-list">
+                        </ul>
+
+                        <div class="mission-divider"></div>
+
+                        <h4>Conceptos descubiertos</h4>
+
+                        <ul
+                            id="lista-conceptos"
+                            class="concept-list">
+                        </ul>
+
+                        <button
+                            id="btn-diario"
+                            class="btn btn-secondary"
+                            type="button">
+                            Abrir diario filosófico
+                        </button>
+
+                    </aside>
+
+                </div>
+
+                <!-- GUÍA DE CONTROLES -->
+
+                <div class="controls-guide">
+
+                    <span>
+                        <kbd>←</kbd>
+                        <kbd>→</kbd>
+                        Mover
+                    </span>
+
+                    <span>
+                        <kbd>Espacio</kbd>
+                        Saltar
+                    </span>
+
+                    <span>
+                        <kbd>E</kbd>
+                        Interactuar
+                    </span>
+
+                    <span>
+                        <kbd>ESC</kbd>
+                        Pausar
+                    </span>
+
+                </div>
+
+            </section>
+
+            <!-- ================================= -->
+            <!-- PANTALLA 5: NIVEL SUPERADO        -->
+            <!-- ================================= -->
+
+            <section
+                id="pantalla-nivel-superado"
+                class="screen screen-complete hidden"
+                aria-labelledby="titulo-nivel-superado">
+
+                <div class="complete-card">
+
+                    <span class="eyebrow">
+                        MISIÓN COMPLETADA
+                    </span>
+
+                    <h2 id="titulo-nivel-superado">
+                        ¡Sala superada!
+                    </h2>
+
+                    <p id="resumen-nivel-superado">
+                        Lograste comprender los mecanismos
+                        principales de esta sala.
+                    </p>
+
+                    <div class="complete-results">
+
+                        <div>
+                            <span>Puntos obtenidos</span>
+                            <strong id="puntos-nivel">0</strong>
+                        </div>
+
+                        <div>
+                            <span>Conceptos descubiertos</span>
+                            <strong id="conceptos-nivel">0</strong>
+                        </div>
+
+                    </div>
+
+                    <div id="reflexion-nivel" class="reflection-card">
+                    </div>
+
+                    <button
+                        id="btn-siguiente-nivel"
+                        class="btn btn-primary"
+                        type="button">
+                        Continuar aventura
+                    </button>
+
+                    <button
+                        id="btn-volver-mapa"
+                        class="btn btn-secondary"
+                        type="button">
+                        Ver mapa del palacio
+                    </button>
+
+                </div>
+
+            </section>
+
+            <!-- ================================= -->
+            <!-- PANTALLA 6: FINAL DEL JUEGO       -->
+            <!-- ================================= -->
+
+            <section
+                id="pantalla-final"
+                class="screen screen-ending hidden"
+                aria-labelledby="titulo-final">
+
+                <div class="ending-container">
+
+                    <span class="eyebrow">
+                        EL PALACIO HA REVELADO SUS SECRETOS
+                    </span>
+
+                    <h2 id="titulo-final">
+                        ¿Dónde está el poder?
+                    </h2>
+
+                    <p>
+                        Atravesaste espacios donde el poder
+                        vigila, clasifica y también
+                        aparece como una exigencia
+                        que podemos imponernos.
+                    </p>
+
+                    <div class="ending-philosophers">
+
+                        <article>
+                            <h3>Foucault</h3>
+                            <p>
+                                El poder atraviesa
+                                las prácticas, los cuerpos
+                                y las instituciones.
+                            </p>
+                        </article>
+
+                        <article>
+                            <h3>Preciado</h3>
+                            <p>
+                                Las normas y las categorías
+                                intervienen en la construcción
+                                de identidades.
+                            </p>
+                        </article>
+
+                        <article>
+                            <h3>Byung-Chul Han</h3>
+                            <p>
+                                La exigencia puede
+                                interiorizarse y convertirse
+                                en una presión sobre uno mismo.
+                            </p>
+                        </article>
+
+                    </div>
+
+                    <div class="final-reflection">
+
+                        <h3>La última pregunta</h3>
+
+                        <p>
+                            Si el poder influye en lo que
+                            hacemos, en lo que somos
+                            y en lo que nos exigimos,
+                            ¿cómo podemos reconocerlo
+                            y cuestionarlo?
+                        </p>
+
+                        <label for="respuesta-reflexion">
+                            Escribí tu reflexión personal
+                            (opcional):
+                        </label>
+
+                        <textarea
+                            id="respuesta-reflexion"
+                            rows="5"
+                            maxlength="1500"
+                            placeholder="Escribí qué descubriste durante el recorrido...">
+                        </textarea>
+
+                        <button
+                            id="btn-copiar-reflexion"
+                            class="btn btn-secondary"
+                            type="button">
+                            Copiar mi reflexión
+                        </button>
+
+                    </div>
+
+                    <div class="final-results">
+
+                        <h3>Tu recorrido</h3>
+
+                        <p>
+                            Puntuación final:
+                            <strong id="puntuacion-final">0</strong>
+                        </p>
+
+                        <p>
+                            Conceptos descubiertos:
+                            <strong id="conceptos-final">0</strong>
+                        </p>
+
+                    </div>
+
+                    <button
+                        id="btn-reiniciar"
+                        class="btn btn-primary"
+                        type="button">
+                        Volver a jugar
+                    </button>
+
+                </div>
+
+            </section>
+
+        </main>
+
+        <!-- ================================= -->
+        <!-- VENTANA: INSTRUCCIONES            -->
+        <!-- ================================= -->
+
+        <div
+            id="modal-instrucciones"
+            class="modal hidden"
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="titulo-instrucciones">
+
+            <div class="modal-content">
+
+                <button
+                    class="modal-close"
+                    type="button"
+                    data-close-modal
+                    aria-label="Cerrar instrucciones">
+                    ×
+                </button>
+
+                <p class="eyebrow">GUÍA DEL JUGADOR</p>
+
+                <h2 id="titulo-instrucciones">
+                    ¿Cómo se juega?
+                </h2>
+
+                <p>
+                    Tu objetivo es explorar cada sala,
+                    descubrir sus reglas y comprender
+                    las situaciones que aparecen.
+                </p>
+
+                <div class="instructions-grid">
+
+                    <div>
+                        <strong>1. Explorá</strong>
+                        <p>
+                            Mové el personaje con las flechas
+                            del teclado o las teclas A y D.
+                        </p>
+                    </div>
+
+                    <div>
+                        <strong>2. Superá obstáculos</strong>
+                        <p>
+                            Utilizá la barra espaciadora
+                            para saltar y alcanzar
+                            nuevas zonas.
+                        </p>
+                    </div>
+
+                    <div>
+                        <strong>3. Interactuá</strong>
+                        <p>
+                            Acercate a objetos y personajes.
+                            Presioná E para interactuar.
+                        </p>
+                    </div>
+
+                    <div>
+                        <strong>4. Pensá y decidí</strong>
+                        <p>
+                            Observá las consecuencias
+                            de tus decisiones.
+                            No necesitás saber Filosofía
+                            antes de empezar.
+                        </p>
+                    </div>
+
+                    <div>
+                        <strong>5. Aprendé del error</strong>
+                        <p>
+                            Si una decisión no funciona,
+                            recibirás orientación
+                            y podrás intentarlo nuevamente.
+                        </p>
+                    </div>
+
+                    <div>
+                        <strong>6. Avanzá</strong>
+                        <p>
+                            Completá los objetivos
+                            para desbloquear
+                            la siguiente sala.
+                        </p>
+                    </div>
+
+                </div>
+
+                <button
+                    class="btn btn-primary"
+                    type="button"
+                    data-close-modal>
+                    Entendido
+                </button>
+
+            </div>
+
+        </div>
+
+        <!-- ================================= -->
+        <!-- VENTANA: DIÁLOGOS Y DESAFÍOS      -->
+        <!-- ================================= -->
+
+        <div
+            id="modal-desafio"
+            class="modal hidden"
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="titulo-desafio">
+
+            <div class="modal-content challenge-modal">
+
+                <div class="challenge-header">
+
+                    <span id="tipo-desafio" class="eyebrow">
+                        DESAFÍO FILOSÓFICO
+                    </span>
+
+                    <h2 id="titulo-desafio">
+                        Nuevo desafío
+                    </h2>
+
+                    <p id="descripcion-desafio"></p>
+
+                </div>
+
+                <div id="contenido-desafio" class="challenge-body">
+                </div>
+
+                <div
+                    id="retroalimentacion-desafio"
+                    class="challenge-feedback hidden"
+                    role="status"
+                    aria-live="polite">
+                </div>
+
+                <div class="challenge-actions">
+
+                    <button
+                        id="btn-pista"
+                        class="btn btn-secondary"
+                        type="button">
+                        Solicitar pista
+                    </button>
+
+                    <button
+                        id="btn-reintentar"
+                        class="btn btn-secondary hidden"
+                        type="button">
+                        Reintentar
+                    </button>
+
+                    <button
+                        id="btn-cerrar-desafio"
+                        class="btn btn-primary"
+                        type="button">
+                        Volver al juego
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- ================================= -->
+        <!-- VENTANA: DIARIO FILOSÓFICO        -->
+        <!-- ================================= -->
+
+        <div
+            id="modal-diario"
+            class="modal hidden"
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="titulo-diario">
+
+            <div class="modal-content">
+
+                <button
+                    class="modal-close"
+                    type="button"
+                    data-close-modal
+                    aria-label="Cerrar diario">
+                    ×
+                </button>
+
+                <p class="eyebrow">TU RECORRIDO</p>
+
+                <h2 id="titulo-diario">
+                    Diario filosófico
+                </h2>
+
+                <p>
+                    Aquí se registran los conceptos
+                    y descubrimientos realizados
+                    durante la aventura.
+                </p>
+
+                <div id="diario-contenido">
+                </div>
+
+                <button
+                    class="btn btn-primary"
+                    type="button"
+                    data-close-modal>
+                    Volver al juego
+                </button>
+
+            </div>
+
+        </div>
+
+        <!-- ================================= -->
+        <!-- VENTANA: PAUSA                   -->
+        <!-- ================================= -->
+
+        <div
+            id="modal-pausa"
+            class="modal hidden"
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="titulo-pausa">
+
+            <div class="modal-content pause-content">
+
+                <h2 id="titulo-pausa">
+                    Juego en pausa
+                </h2>
+
+                <p>
+                    Tu aventura continuará
+                    desde donde la dejaste.
+                </p>
+
+                <button
+                    id="btn-reanudar"
+                    class="btn btn-primary"
+                    type="button">
+                    Continuar jugando
+                </button>
+
+                <button
+                    id="btn-salir-mapa"
+                    class="btn btn-secondary"
+                    type="button">
+                    Volver al mapa
+                </button>
+
+            </div>
+
+        </div>
+
+        <!-- ANUNCIOS PARA LECTORES DE PANTALLA -->
+
+        <div
+            id="anuncio-accesible"
+            class="sr-only"
+            role="status"
+            aria-live="polite"
+            aria-atomic="true">
+        </div>
+
+        <!-- PIE -->
+
+        <footer class="site-footer">
+
+            <p>
+                El Palacio del Poder · Videojuego educativo de Filosofía
+            </p>
+
+            <p>
+                Unidad: Política y poder · 3.º EMS
+            </p>
+
+        </footer>
+
+    </div>
+
+</body>
+</html>
